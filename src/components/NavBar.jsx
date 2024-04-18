@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toggleSidebar } from "../StateManagment/websiteSlice";
 
 function TopNav() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handelToggleSideBar = () => {
+    dispatch(toggleSidebar());
+  };
 
   return (
     <div className="TopNav">
@@ -17,14 +24,16 @@ function TopNav() {
           id="search-input"
           className="searchBar"
           type="search"
-          placeholder="Search..."
+          placeholder="...Search"
         />
       </form>
-      <div className="HamburgerMenu">
+
+      <div className="HamburgerMenu" onClick={handelToggleSideBar}>
         <div className="lines"></div>
         <div className="lines"></div>
         <div className="lines"></div>
       </div>
+      <button className="LogInButton">LogIn</button>
     </div>
   );
 }
