@@ -17,7 +17,7 @@ export const MovieApi = createApi({
   endpoints: (builder) => ({
     getMoviesByPopularity: builder.query({
       query: () =>
-        "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+        "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_original_language=en",
     }),
   }),
 });
