@@ -1,0 +1,46 @@
+.single-movie-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .movie-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .movie-header img {
+    width: 300px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .movie-info {
+    max-width: 600px;
+  }
+  
+  .additional-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .collection {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .collection img {
+    width: 200px;
+    border-radius: 8px;
+  }
+  
+  .production {
+    flex: 1;
+  }
+  
+  .production img {
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  

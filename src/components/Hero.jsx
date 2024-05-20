@@ -1,9 +1,10 @@
 import { useGetMoviesByPopularityQuery } from "../MovieAPI";
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { data, error, isLoading } = useGetMoviesByPopularityQuery();
+  const navigate = useNavigate();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -19,17 +20,31 @@ const Hero = () => {
     return <div>No movies available</div>;
   }
 
+
+const handelClick = () => {
+  navigate(`/movie/${movie.id}`);
+}
+
+
+
+
+
+
+
+
   return (
-    <div>
+    <div className="HeroSection">
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
+        onClick={handelClick}
+      
       />
       {/* You can also include the backdrop image if needed */}
-      {/* <img
+      <img
         src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
         alt={`Backdrop for ${movie.title}`}
-      /> */}
+      />
       <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
     </div>

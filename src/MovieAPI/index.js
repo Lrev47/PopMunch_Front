@@ -1,3 +1,3 @@
-import { useGetMoviesByPopularityQuery } from "./movieApi";
+import { useGetMoviesByPopularityQuery, useGetMovieByIdQuery, } from "./movieApi";
 
-export { useGetMoviesByPopularityQuery };
+export { useGetMoviesByPopularityQuery, useGetMovieByIdQuery, };
