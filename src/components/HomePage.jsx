@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const { data, error, isLoading } = useGetMoviesByPopularityQuery();
   const navigate = useNavigate();
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -20,21 +21,18 @@ const HomePage = () => {
     navigate(`/movie/${id}`);
   };
 
-  // console.log(data);
+  const movies = data.results.slice(1);
+
   return (
     <>
       <div>
-        {data.results.map((movie) => (
+        {movies.map((movie) => (
           <div key={movie.id}>
             <img
               onClick={() => handleClick(movie.id)}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
-            {/* <img
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-              alt={`Backdrop for ${movie.title}`}
-            /> */}
           </div>
         ))}
       </div>

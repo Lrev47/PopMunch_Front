@@ -32,6 +32,7 @@
   flex-direction: column;
   z-index: 1;
   color: white;
+  text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .HeroInfoDiv h1 {
