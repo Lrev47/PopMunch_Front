@@ -1,5 +1,4 @@
 import { useGetMoviesByPopularityQuery } from "../MovieAPI";
-// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
@@ -20,33 +19,35 @@ const Hero = () => {
     return <div>No movies available</div>;
   }
 
+  const handelClick = () => {
+    navigate(`/movie/${movie.id}`);
+  };
 
-const handelClick = () => {
-  navigate(`/movie/${movie.id}`);
-}
-
-
-
-
-
-
-
+  // Convert the vote_average to a percentage and format it to two decimal places
+  const ratingPercentage = ((movie.vote_average / 10) * 100).toFixed(2);
 
   return (
     <div className="HeroSection">
       <img
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        className="MoviePoster"
+        src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
         alt={movie.title}
         onClick={handelClick}
-      
       />
-      {/* You can also include the backdrop image if needed */}
       <img
-        src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+        className="MovieBackdrop"
+        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
         alt={`Backdrop for ${movie.title}`}
       />
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
+      <div className="HeroInfoDiv">
+        <h1>{movie.title}</h1>
+        <p>{movie.overview}</p>
+        <div>
+          <strong>Rating:</strong>
+          <progress value={ratingPercentage} max="100"></progress>
+          <span>{ratingPercentage}%</span>
+        </div>
+      </div>
     </div>
   );
 };

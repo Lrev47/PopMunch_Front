@@ -1,0 +1,55 @@
+.HeroSection {
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  max-width: 80%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.MoviePoster {
+  width: 500px;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+  margin-right: 2rem; /* Add space between poster and info */
+}
+
+.MovieBackdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.HeroInfoDiv {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  color: white;
+}
+
+.HeroInfoDiv h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.HeroInfoDiv p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.HeroInfoDiv .rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.HeroInfoDiv .rating progress {
+  margin-right: 1rem;
+}
