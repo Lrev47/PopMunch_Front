@@ -9,16 +9,19 @@ function TopNav() {
   const handelToggleSideBar = () => {
     dispatch(toggleSidebar());
   };
+  const returnHomeOnClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className="TopNav">
-      <Link className="TopNavLinks">
-        <img
-          className="WebsiteLogo"
-          alt="Website logo"
-          src="https://imagizer.imageshack.com/img922/3152/npjpsD.png"
-        />
-      </Link>
+      <img
+        onClick={returnHomeOnClick}
+        className="WebsiteLogo"
+        alt="Website logo"
+        src="https://imagizer.imageshack.com/img922/3152/npjpsD.png"
+      />
+
       <form className="searchBarForm">
         <input
           id="search-input"

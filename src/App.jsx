@@ -4,31 +4,29 @@ import HomePage from "./components/HomePage";
 import TopNav from "./components/NavBar";
 import Sidebar from "./components/SideNav";
 import Hero from "./components/Hero";
-import SingleMovie from "./components/SingleMovie"
+import SingleMovie from "./components/SingleMovie";
 function App() {
   return (
     <>
+      <TopNav />
+      <Sidebar />
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <>
-              <TopNav />
-              <Sidebar />
               <Hero />
               <HomePage />
             </>
           }
-
         />
-        <Route path="/movie/:id"
-        element={
-          <>
-          <TopNav/>
-          <Sidebar/>
-          <SingleMovie/>
-          </>
-        }
+        <Route
+          path="/movie/:id"
+          element={
+            <>
+              <SingleMovie />
+            </>
+          }
         />
       </Routes>
     </>
