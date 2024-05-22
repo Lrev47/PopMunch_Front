@@ -1,0 +1,79 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  background-color: rgb(26, 26, 26);
+}
+
+.socials {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.socials__github,
+.socials__email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.socials__github:hover,
+.socials__email:hover {
+  transform: scale(1.2);
+}
+
+.socials__github {
+  margin-right: 1rem;
+}
+
+.socials__email {
+  margin-left: 1rem;
+}
+
+.socials img {
+  height: 100%;
+}
+
+.copyright {
+  color: var(--color-text);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.return-home {
+  position: absolute;
+  top: -25px;
+  width: 40px;
+  height: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: var(--color-red);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.return-home:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+
+.return-home svg {
+  width: 100%;
+}

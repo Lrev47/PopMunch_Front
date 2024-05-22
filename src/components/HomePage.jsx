@@ -2,7 +2,7 @@ import { useGetMoviesByPopularityQuery } from "../MovieAPI";
 // import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const HomePage = () => {
+const PopularMovieList = () => {
   const { data, error, isLoading } = useGetMoviesByPopularityQuery();
   const navigate = useNavigate();
 
@@ -39,4 +39,4 @@ const HomePage = () => {
     </>
   );
 };
-export default HomePage;
+export default PopularMovieList;
