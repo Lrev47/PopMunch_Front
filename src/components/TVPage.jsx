@@ -19,6 +19,10 @@ const TVShowsList = () => {
         {data.results.map((tvShow) => (
           <li key={tvShow.id}>
             <h2>{tvShow.name}</h2>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
+              alt={tvShow.name}
+            />
             <p>{tvShow.overview}</p>
             <p>Rating: {tvShow.vote_average}</p>
           </li>
