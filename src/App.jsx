@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import SingleMovie from "./components/SingleMovie";
 import LoginPage from "./components/LogIn";
 import Footer from "./components/Footer";
+import TVShowsList from "./components/TVPage";
 
 function App() {
   return (
@@ -39,6 +40,17 @@ function App() {
           element={
             <>
               <LoginPage />
+            </>
+          }
+        />
+
+        <Route />
+
+        <Route
+          path="/tv"
+          element={
+            <>
+              <TVShowsList />
             </>
           }
         />

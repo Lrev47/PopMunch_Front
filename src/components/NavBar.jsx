@@ -12,7 +12,9 @@ function TopNav() {
   const returnHomeOnClick = () => {
     navigate("/");
   };
-
+  const logInPageOnClick = () => {
+    navigate("/logIn");
+  };
   return (
     <div className="TopNav">
       <img
@@ -36,7 +38,9 @@ function TopNav() {
         <div className="lines"></div>
         <div className="lines"></div>
       </div>
-      <button className="LogInButton">LogIn</button>
+      <button onClick={logInPageOnClick} className="LogInButton">
+        LogIn
+      </button>
     </div>
   );
 }
