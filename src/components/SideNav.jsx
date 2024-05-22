@@ -1,46 +1,32 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar } from "../StateManagment/websiteSlice";
+import { useNavigate } from "react-router-dom";
 
 function SideBar() {
   const isSidebarOpen = useSelector((state) => state.ui.sidebarOpen);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const sidebarStyle = {
-    height: "100%",
-    width: isSidebarOpen ? "500px" : "0",
-    position: "fixed",
-    zIndex: 1,
-    top: 0,
-    right: 0,
-    backgroundColor: "#111",
-    overflowX: "hidden",
-    transition: "width 0.5s, opacity 0.5s, visibility 0.5s",
-    padding: "10px 20px",
-    opacity: isSidebarOpen ? 1 : 0,
-    visibility: isSidebarOpen ? "visible" : "hidden",
-  };
-  const closeButtonStyle = {
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    border: "none",
-    background: "none",
-    color: "white",
-    fontSize: "24px",
-    cursor: "pointer",
+  const handleNavigation = (path) => {
+    navigate(path);
+    dispatch(toggleSidebar()); // Close the sidebar after navigating
   };
 
   return (
-    <div style={sidebarStyle}>
+    <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
       <button
-        style={closeButtonStyle}
+        className="close-button"
         onClick={() => dispatch(toggleSidebar())}
       >
         &#x2715; {/* Unicode multiplication sign (X symbol) */}
       </button>
-      <h1>Sidebar Content</h1>
-      <p>Place any content here that should appear in the sidebar.</p>
+      <h1>Navigation Menu</h1>
+      <ul className="sidebar-links">
+        <li onClick={() => handleNavigation("/movies")}>Movie Section</li>
+        <li onClick={() => handleNavigation("/tv")}>TV Section</li>
+        <li onClick={() => handleNavigation("/account")}>Account Page</li>
+      </ul>
     </div>
   );
 }
