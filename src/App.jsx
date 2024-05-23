@@ -9,6 +9,7 @@ import LoginPage from "./components/LogIn";
 import Footer from "./components/Footer";
 import TVShowsList from "./components/TVPage";
 import SingleTvShow from "./components/SingleTvShow"
+import CollectionDetails from "./components/collections";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           element={
             <>
               <Hero />
-              <PopularMovieList />
+              
             </>
           }
         />
@@ -68,6 +69,39 @@ function App() {
         />
 
         <Route />
+
+        <Route
+          path="/movies"
+          element={
+            <>
+              <PopularMovieList />
+            </>
+          }
+        />
+
+        <Route />
+
+
+        <Route
+          path="/collections/:id"
+          element={
+            <>
+              <CollectionDetails />
+            </>
+          }
+        />
+
+        <Route />
+
+
+
+
+
+
+
+
+
+
       </Routes>
       <Footer />
     </>

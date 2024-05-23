@@ -1,0 +1,53 @@
+.collection-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .collection-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .collection-header img {
+    width: 300px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .collection-info {
+    max-width: 600px;
+  }
+  
+  .collection-movies {
+    margin-top: 20px;
+  }
+  
+  .collection-movies ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .collection-movies li {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .collection-movies img {
+    width: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .collection-movies div {
+    max-width: 600px;
+  }
+  
+  .collection-movies h3 {
+    margin: 0;
+  }
+  
+  .collection-movies p {
+    margin: 5px 0;
+  }
+  

@@ -22,7 +22,11 @@ export const MovieApi = createApi({
     getMovieById: builder.query({
       query: (movieId) => `/movie/${movieId}`,
     }),
+  
+  getCollectionById: builder.query({
+    query:(collectionId) => `/collection/${collectionId}`,
+  }),
   }),
 });
 
-export const { useGetMoviesByPopularityQuery, useGetMovieByIdQuery } = MovieApi;
+export const { useGetMoviesByPopularityQuery, useGetMovieByIdQuery, useGetCollectionByIdQuery } = MovieApi;
