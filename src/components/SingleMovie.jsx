@@ -73,7 +73,7 @@ const CollectionsHandelClick = (id) => {
           {movie.belongs_to_collection && (
             <div>
               <img
-              onClick={CollectionsHandelClick(movie.belongs_to_collection.id)}
+              onClick={() => CollectionsHandelClick(movie.belongs_to_collection.id)}
                 src={`https://image.tmdb.org/t/p/w500${movie.belongs_to_collection.poster_path}`}
                 alt={movie.belongs_to_collection.name}
               />

@@ -1,15 +1,20 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useGetCollectionByIdQuery } from "../MovieAPI"; 
 
 const CollectionDetails = () => {
   const { id } = useParams();
   const { data: collection, error, isLoading } = useGetCollectionByIdQuery(id);
+  const navigate = useNavigate();
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-console.log(collection)
+  const handleClick = (id) => {
+    navigate(`/movie/${id}`);
+  };
+
+  console.log(collection);
 
   return (
     <div className="collection-container">
@@ -27,7 +32,7 @@ console.log(collection)
         <h2>Movies in this Collection</h2>
         <ul>
           {collection.parts.map((movie) => (
-            <li key={movie.id}>
+            <li key={movie.id} onClick={() => handleClick(movie.id)}>
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}
