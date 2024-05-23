@@ -8,6 +8,7 @@ import SingleMovie from "./components/SingleMovie";
 import LoginPage from "./components/LogIn";
 import Footer from "./components/Footer";
 import TVShowsList from "./components/TVPage";
+import SingleTvShow from "./components/SingleTvShow"
 
 function App() {
   return (
@@ -34,6 +35,17 @@ function App() {
             </>
           }
         />
+
+
+<Route
+          path="/tv/:id"
+          element={
+            <>
+              <SingleTvShow  />
+            </>
+          }
+        />
+
 
         <Route
           path="/logIn"

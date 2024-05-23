@@ -1,8 +1,16 @@
 import React from "react";
 import { useGetTVShowsByPopularityQuery } from "../MovieAPI/TvApi"; // Adjust the path accordingly
+import { useNavigate } from "react-router-dom";
+
+
 
 const TVShowsList = () => {
   const { data, error, isLoading } = useGetTVShowsByPopularityQuery();
+  const navigate = useNavigate();
+
+const handleClick = (id) => {
+  navigate(`/tv/${id}`)
+}
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -20,6 +28,7 @@ const TVShowsList = () => {
           <li key={tvShow.id}>
             <h2>{tvShow.name}</h2>
             <img
+            onClick={() => handleClick(tvShow.id)}
               src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
               alt={tvShow.name}
             />

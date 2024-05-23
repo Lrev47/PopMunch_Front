@@ -1,0 +1,54 @@
+.single-tvshow-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .tvshow-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .tvshow-header img {
+    width: 300px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .tvshow-info {
+    max-width: 600px;
+  }
+  
+  .additional-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .collection {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .production {
+    flex: 1;
+  }
+  
+  .collection ul, .production ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .collection li, .production li {
+    margin-bottom: 5px;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
