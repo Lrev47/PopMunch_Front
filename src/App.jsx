@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import PopularMovieList from "./components/HomePage";
+import PopularMovieList from "./components/MoviePage";
 import TopNav from "./components/NavBar";
 import Sidebar from "./components/SideNav";
 import Hero from "./components/Hero";

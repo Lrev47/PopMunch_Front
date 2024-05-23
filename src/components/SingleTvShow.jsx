@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetTVShowByIdQuery } from "../MovieAPI/TvApi"; // Adjust the path accordingly
-import "./SingleTvShow.css"; // Import the CSS file
+import { useGetTVShowByIdQuery } from "../MovieAPI/TvApi";
 
 const SingleTvShow = () => {
   const { id } = useParams();
