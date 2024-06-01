@@ -39,7 +39,7 @@ const MainHero = () => {
       }}
     >
       <div className="hero-content">
-        <h1>Welcome to Movie Rating Website</h1>
+        <h1>Welcome to Pop Munch!</h1>
         <p className="description">
           Your ultimate destination for movie and TV show ratings.
         </p>
