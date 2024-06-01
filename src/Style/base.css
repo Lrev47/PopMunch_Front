@@ -1,4 +1,29 @@
 :root {
-  background-color: rgb(54, 54, 54);
+  --primary-bg-color: #363636;
+  --primary-color: #ffffff;
+  --secondary-color: #f1f1f1;
+  --accent-color: #e74c3c;
+  --font-family: "Roboto", sans-serif;
+  --transition-speed: 0.3s;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
   width: 100%;
+  font-family: var(--font-family);
+  transition: background-color var(--transition-speed);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: darken(var(--accent-color), 10%);
 }

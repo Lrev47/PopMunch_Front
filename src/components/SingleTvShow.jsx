@@ -26,12 +26,25 @@ const SingleTvShow = () => {
         <div className="tvshow-info">
           <h1>{data.name}</h1>
           <p>{data.overview}</p>
-          <p><strong>First Air Date:</strong> {data.first_air_date}</p>
-          <p><strong>Last Air Date:</strong> {data.last_air_date}</p>
-          <p><strong>Status:</strong> {data.status}</p>
-          <p><strong>Number of Seasons:</strong> {data.number_of_seasons}</p>
-          <p><strong>Number of Episodes:</strong> {data.number_of_episodes}</p>
-          <p><strong>Average Episode Run Time:</strong> {data.episode_run_time.join(", ")} minutes</p>
+          <p>
+            <strong>First Air Date:</strong> {data.first_air_date}
+          </p>
+          <p>
+            <strong>Last Air Date:</strong> {data.last_air_date}
+          </p>
+          <p>
+            <strong>Status:</strong> {data.status}
+          </p>
+          <p>
+            <strong>Number of Seasons:</strong> {data.number_of_seasons}
+          </p>
+          <p>
+            <strong>Number of Episodes:</strong> {data.number_of_episodes}
+          </p>
+          <p>
+            <strong>Average Episode Run Time:</strong>{" "}
+            {data.episode_run_time.join(", ")} minutes
+          </p>
         </div>
       </div>
 
@@ -61,8 +74,12 @@ const SingleTvShow = () => {
           </ul>
 
           <h2>Languages</h2>
-          <p><strong>Original Language:</strong> {data.original_language}</p>
-          <p><strong>Spoken Languages:</strong></p>
+          <p>
+            <strong>Original Language:</strong> {data.original_language}
+          </p>
+          <p>
+            <strong>Spoken Languages:</strong>
+          </p>
           <ul>
             {data.spoken_languages.map((language, index) => (
               <li key={index}>{language.name}</li>
@@ -74,11 +91,24 @@ const SingleTvShow = () => {
       <div className="additional-info">
         <div className="collection">
           <h2>Other Information</h2>
-          <p><strong>Homepage:</strong> <a href={data.homepage} target="_blank" rel="noopener noreferrer">{data.homepage}</a></p>
-          <p><strong>Tagline:</strong> {data.tagline}</p>
-          <p><strong>Rating:</strong> {data.vote_average}</p>
-          <p><strong>Vote Count:</strong> {data.vote_count}</p>
-          <p><strong>Popularity:</strong> {data.popularity}</p>
+          <p>
+            <strong>Homepage:</strong>{" "}
+            <a href={data.homepage} target="_blank" rel="noopener noreferrer">
+              {data.homepage}
+            </a>
+          </p>
+          <p>
+            <strong>Tagline:</strong> {data.tagline}
+          </p>
+          <p>
+            <strong>Rating:</strong> {data.vote_average}
+          </p>
+          <p>
+            <strong>Vote Count:</strong> {data.vote_count}
+          </p>
+          <p>
+            <strong>Popularity:</strong> {data.popularity}
+          </p>
         </div>
       </div>
     </div>

@@ -1,16 +1,14 @@
 import React from "react";
-import { useGetTVShowsByPopularityQuery } from "../MovieAPI/TvApi"; // Adjust the path accordingly
+import { useGetTVShowsByPopularityQuery } from "../MovieAPI/TvApi";
 import { useNavigate } from "react-router-dom";
-
-
 
 const TVShowsList = () => {
   const { data, error, isLoading } = useGetTVShowsByPopularityQuery();
   const navigate = useNavigate();
 
-const handleClick = (id) => {
-  navigate(`/tv/${id}`)
-}
+  const handleClick = (id) => {
+    navigate(`/tv/${id}`);
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -21,19 +19,22 @@ const handleClick = (id) => {
   }
 
   return (
-    <div>
-      <h1>Popular TV Shows</h1>
-      <ul>
+    <div className="tvshows-list-container">
+      <h1 className="tvshows-list-header">Popular TV Shows</h1>
+      <ul className="tvshows-list">
         {data.results.map((tvShow) => (
-          <li key={tvShow.id}>
-            <h2>{tvShow.name}</h2>
-            <img
+          <li
+            key={tvShow.id}
+            className="tvshow-item"
             onClick={() => handleClick(tvShow.id)}
+          >
+            <img
               src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`}
               alt={tvShow.name}
             />
+            <h2>{tvShow.name}</h2>
             <p>{tvShow.overview}</p>
-            <p>Rating: {tvShow.vote_average}</p>
+            <p className="rating">Rating: {tvShow.vote_average}</p>
           </li>
         ))}
       </ul>

@@ -1,54 +1,73 @@
+/* singleTVShow.css */
 .single-tvshow-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .tvshow-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .tvshow-header img {
-    width: 300px;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  .tvshow-info {
-    max-width: 600px;
-  }
-  
-  .additional-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .collection {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .production {
-    flex: 1;
-  }
-  
-  .collection ul, .production ul {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-  
-  .collection li, .production li {
-    margin-bottom: 5px;
-  }
-  
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 20px;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+}
+
+.tvshow-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.tvshow-header img {
+  width: 300px;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.tvshow-info {
+  max-width: 600px;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.collection {
+  flex: 1;
+  margin-right: 20px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.production {
+  flex: 1;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.collection ul,
+.production ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.collection li,
+.production li {
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: darken(var(--accent-color), 10%);
+}

@@ -10,7 +10,7 @@ function SideBar() {
 
   const handleNavigation = (path) => {
     navigate(path);
-    dispatch(toggleSidebar()); // Close the sidebar after navigating
+    dispatch(toggleSidebar());
   };
 
   return (
@@ -19,13 +19,12 @@ function SideBar() {
         className="close-button"
         onClick={() => dispatch(toggleSidebar())}
       >
-        &#x2715; {/* Unicode multiplication sign (X symbol) */}
+        &#x2715;
       </button>
       <h1>Navigation Menu</h1>
       <ul className="sidebar-links">
         <li onClick={() => handleNavigation("/movies")}>Movie Section</li>
         <li onClick={() => handleNavigation("/tv")}>TV Section</li>
-        <li onClick={() => handleNavigation("/account")}>Account Page</li>
       </ul>
     </div>
   );

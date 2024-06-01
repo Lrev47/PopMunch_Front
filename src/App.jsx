@@ -3,105 +3,91 @@ import { Routes, Route } from "react-router-dom";
 import PopularMovieList from "./components/MoviePage";
 import TopNav from "./components/NavBar";
 import Sidebar from "./components/SideNav";
-import Hero from "./components/Hero";
+import MovieHero from "./components/MovieHero";
 import SingleMovie from "./components/SingleMovie";
-import LoginPage from "./components/LogIn";
+// import LoginPage from "./components/LogIn";
 import Footer from "./components/Footer";
 import TVShowsList from "./components/TVPage";
-import SingleTvShow from "./components/SingleTvShow"
+import SingleTvShow from "./components/SingleTvShow";
 import CollectionDetails from "./components/collections";
+import LandingPage from "./components/LandingPage";
+import MainHero from "./components/MainHero";
 
 function App() {
   return (
     <>
-      <TopNav />
-      <Sidebar />
-
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Hero />
-              
+              <MainHero />
+              <TopNav />
+              <Sidebar />
+              <LandingPage />
             </>
           }
         />
-
         <Route
           path="/movie/:id"
           element={
             <>
+              <TopNav />
+              <Sidebar />
               <SingleMovie />
             </>
           }
         />
-
-
-<Route
+        <Route
           path="/tv/:id"
           element={
             <>
-              <SingleTvShow  />
+              <TopNav />
+              <Sidebar />
+              <SingleTvShow />
             </>
           }
         />
-
-
         <Route
           path="/logIn"
           element={
             <>
-              <LoginPage />
+              <TopNav />
+              <Sidebar />
             </>
           }
         />
-
-        <Route />
-
         <Route
           path="/tv"
           element={
             <>
+              <TopNav />
+              <Sidebar />
               <TVShowsList />
             </>
           }
         />
-
-        <Route />
-
         <Route
           path="/movies"
           element={
             <>
+              <TopNav />
+              <Sidebar />
+              <MovieHero />
               <PopularMovieList />
             </>
           }
         />
-
-        <Route />
-
-
         <Route
           path="/collections/:id"
           element={
             <>
+              <TopNav />
+              <Sidebar />
               <CollectionDetails />
             </>
           }
         />
-
-        <Route />
-
-
-
-
-
-
-
-
-
-
       </Routes>
       <Footer />
     </>

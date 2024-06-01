@@ -1,5 +1,4 @@
 import { useGetMoviesByPopularityQuery } from "../MovieAPI";
-// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PopularMovieList = () => {
@@ -24,20 +23,24 @@ const PopularMovieList = () => {
   const movies = data.results.slice(1);
 
   return (
-    <>
-      <div>
+    <div className="movie-list-container">
+      <h1 className="movie-list-header">Popular Movies</h1>
+      <div className="movie-list">
         {movies.map((movie) => (
-          <div key={movie.id}>
+          <div
+            key={movie.id}
+            className="movie-item"
+            onClick={() => handleClick(movie.id)}
+          >
             <img
-              className="MoviePoster"
-              onClick={() => handleClick(movie.id)}
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
             />
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
+
 export default PopularMovieList;

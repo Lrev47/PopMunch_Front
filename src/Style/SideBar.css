@@ -1,22 +1,25 @@
+/* sideBar.css */
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 100000;
   top: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: width 0.5s, opacity 0.5s, visibility 0.5s;
+  transition: width 0.5s, opacity 0.5s, visibility 0.5s, box-shadow 0.5s;
   padding: 10px 20px;
   opacity: 0;
   visibility: hidden;
+  box-shadow: none;
 }
 
 .sidebar.open {
-  width: 500px;
+  width: 300px;
   opacity: 1;
   visibility: visible;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .close-button {
@@ -33,16 +36,17 @@
 .sidebar-links {
   list-style: none;
   padding: 0;
+  margin-top: 50px;
 }
 
 .sidebar-links li {
-  font-size: 26px;
+  font-size: 22px;
   margin: 20px 0;
-  color: rgb(0, 0, 0);
+  color: #ddd;
   cursor: pointer;
   transition: color 0.3s;
 }
 
 .sidebar-links li:hover {
-  color: #ddd;
+  color: #bbb;
 }

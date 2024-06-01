@@ -1,46 +1,63 @@
+/* singleMovie.css */
 .single-movie-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .movie-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .movie-header img {
-    width: 300px;
-    border-radius: 8px;
-    margin-right: 20px;
-  }
-  
-  .movie-info {
-    max-width: 600px;
-  }
-  
-  .additional-info {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .collection {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .collection img {
-    width: 200px;
-    border-radius: 8px;
-  }
-  
-  .production {
-    flex: 1;
-  }
-  
-  .production img {
-    width: 100px;
-    border-radius: 8px;
-    margin-right: 10px;
-  }
-  
+  padding: 20px;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+}
+
+.movie-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.movie-header img {
+  width: 300px;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: var(--box-shadow);
+}
+
+.movie-info {
+  max-width: 600px;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.collection {
+  flex: 1;
+  margin-right: 20px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.collection img {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.production {
+  flex: 1;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.production img {
+  width: 100px;
+  border-radius: 8px;
+  margin-right: 10px;
+  box-shadow: var(--box-shadow);
+}

@@ -6,6 +6,10 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  background-color: var(--primary-bg-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
 }
 
 .MoviePoster {
@@ -13,7 +17,16 @@
   z-index: 1;
   position: relative;
   cursor: pointer;
-  margin-right: 2rem; /* Add space between poster and info */
+  margin-right: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.MoviePoster:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .MovieBackdrop {
@@ -31,8 +44,8 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
-  color: white;
-  text-shadow: 3px 3px 5px rgb(0, 0, 0);
+  color: var(--primary-color);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .HeroInfoDiv h1 {

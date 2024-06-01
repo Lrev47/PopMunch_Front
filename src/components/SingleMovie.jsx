@@ -6,20 +6,17 @@ import { useGetMovieByIdQuery } from "../MovieAPI";
 function SingleMovie() {
   const { id } = useParams();
   const { data: movie, error, isLoading } = useGetMovieByIdQuery(id);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-const CollectionsHandelClick = (id) => {
-  navigate(`/collections/${id}`)
-}
-
-
+  const CollectionsHandelClick = (id) => {
+    navigate(`/collections/${id}`);
+  };
 
   console.log("SINGLE MOVIE DATA:", movie);
 
-  // Convert the vote_average (which is typically out of 10) to a percentage
   const ratingPercentage = ((movie.vote_average / 10) * 100).toFixed(2);
 
   return (
@@ -73,12 +70,16 @@ const CollectionsHandelClick = (id) => {
           {movie.belongs_to_collection && (
             <div>
               <img
-              onClick={() => CollectionsHandelClick(movie.belongs_to_collection.id)}
+                onClick={() =>
+                  CollectionsHandelClick(movie.belongs_to_collection.id)
+                }
                 src={`https://image.tmdb.org/t/p/w500${movie.belongs_to_collection.poster_path}`}
                 alt={movie.belongs_to_collection.name}
               />
               <p>{movie.belongs_to_collection.name}</p>
-              <p><strong>Collection ID:</strong> {movie.belongs_to_collection.id}</p>
+              <p>
+                <strong>Collection ID:</strong> {movie.belongs_to_collection.id}
+              </p>
             </div>
           )}
         </div>
