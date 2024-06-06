@@ -38,17 +38,17 @@ const MainHero = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
       }}
     >
-      <div className="hero-content">
+      <div className="main-hero-content">
         <h1>Welcome to Pop Munch!</h1>
-        <p className="description">
+        <p className="main-hero-description">
           Your ultimate destination for movie and TV show ratings.
         </p>
-        <div className="featured-movie">
+        <div className="main-hero-featured-movie">
           <h2>{movie.title}</h2>
           <p>{movie.overview}</p>
           <button onClick={() => handleClick(movie.id)}>View Details</button>
         </div>
-        <div className="scroll-down" onClick={scrollToContent}>
+        <div className="main-hero-scroll-down" onClick={scrollToContent}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="48"

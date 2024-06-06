@@ -1,0 +1,88 @@
+.movie-hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  .movie-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); 
+    z-index: 0;
+  }
+  
+  .movie-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .movie-hero-poster {
+    flex-shrink: 0;
+  }
+  
+  .movie-hero-poster img {
+    width: 300px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-right: 20px; 
+  }
+  
+  .movie-hero-details {
+    color: black;
+    max-width: 600px;
+  }
+  
+  .movie-hero-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .movie-hero-details p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .movie-hero-details button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .movie-hero-details button:hover {
+    background-color: #ff4500;
+  }
+  
