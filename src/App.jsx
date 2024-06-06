@@ -5,7 +5,7 @@ import TopNav from "./components/NavBar";
 import Sidebar from "./components/SideNav";
 import MovieHero from "./components/MovieHero";
 import SingleMovie from "./components/SingleMovie";
-// import LoginPage from "./components/LogIn";
+import TVHero from "./components/TVHero";
 import Footer from "./components/Footer";
 import TVShowsList from "./components/TVPage";
 import SingleTvShow from "./components/SingleTvShow";
@@ -62,6 +62,7 @@ function App() {
           element={
             <>
               <TopNav />
+              <TVHero />
               <Sidebar />
               <TVShowsList />
             </>
