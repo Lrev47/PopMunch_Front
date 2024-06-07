@@ -38,7 +38,7 @@ const LandingPage = () => {
   const tvShows = tvData?.results.slice(0, 11) || [];
 
   return (
-    <div className="landing-page">
+    <div id="landing-page-content" className="landing-page">
       <main className="main-content">
         <section className="movies-section">
           <h2>Popular Movies</h2>

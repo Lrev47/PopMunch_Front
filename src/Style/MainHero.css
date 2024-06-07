@@ -1,14 +1,15 @@
-/* MainHero.css */
 .main-hero {
   height: 100vh;
-  width: 100%;
+  width: 100vw; /* Ensure it takes up the full viewport width */
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
   color: var(--secondary-color);
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .main-hero-content {
@@ -20,14 +21,17 @@
   max-width: 80%;
 }
 
-.main-hero-content h1 {
+.main-hero-header {
+  margin-bottom: 2rem;
+}
+
+.main-hero-header h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .main-hero-description {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
 }
 
 .main-hero-featured-movie {
@@ -44,7 +48,7 @@
   margin-bottom: 2rem;
 }
 
-.main-hero-content button {
+.main-hero-featured-movie button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: var(--accent-color);
@@ -55,12 +59,15 @@
   transition: background-color var(--transition-speed);
 }
 
-.main-hero-content button:hover {
+.main-hero-featured-movie button:hover {
   background-color: darken(var(--accent-color), 10%);
 }
 
 .main-hero-scroll-down {
-  margin-top: 2rem;
+  position: absolute;
+  bottom: 0; /* Position it at the bottom */
+  left: 49.3%;
+  transform: translateX(-50%) translateY(50%); /* Adjust to look like it's right on top of the bottom */
   cursor: pointer;
   animation: bounce 2s infinite;
 }

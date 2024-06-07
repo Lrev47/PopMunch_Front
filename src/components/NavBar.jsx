@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toggleSidebar } from "../StateManagment/websiteSlice";
@@ -9,12 +10,15 @@ function TopNav() {
   const handelToggleSideBar = () => {
     dispatch(toggleSidebar());
   };
+
   const returnHomeOnClick = () => {
     navigate("/");
   };
+
   const logInPageOnClick = () => {
     navigate("/logIn");
   };
+
   return (
     <div className="TopNav">
       <img
@@ -23,13 +27,16 @@ function TopNav() {
         alt="Website logo"
         src="https://imagizer.imageshack.com/img922/3152/npjpsD.png"
       />
-
       <div className="HamburgerMenu" onClick={handelToggleSideBar}>
         <div className="lines"></div>
         <div className="lines"></div>
         <div className="lines"></div>
       </div>
+      {/* <button className="LogInButton" onClick={logInPageOnClick}>
+        Log In
+      </button> */}
     </div>
   );
 }
+
 export default TopNav;
