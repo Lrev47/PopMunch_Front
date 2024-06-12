@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGetFilteredMoviesQuery, useGetGenresQuery, useGetRegionsQuery, useGetWatchProvidersQuery } from "../MovieAPI/movieApi";
 
+
 const MovieSearch = () => {
+    const navigate = useNavigate();
   const [searchParams, setSearchParams] = useState({
     startDate: '',
     endDate: '',
@@ -20,13 +23,17 @@ const MovieSearch = () => {
     if (searchParams) {
       refetch();
     }
-  }, [searchParams]);
+  }, [searchParams, refetch]);
 
   const handleChange = (e) => {
     setSearchParams({
       ...searchParams,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleClick = (id) => {
+    navigate(`/movie/${id}`);
   };
 
   return (
@@ -104,7 +111,7 @@ const MovieSearch = () => {
         <div className="movie-list-container">
           <ul className="movie-list">
             {data.results.map((movie) => (
-              <li key={movie.id} className="movie-item">
+              <li key={movie.id} className="movie-item" onClick={() => handleClick(movie.id)}>
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
                 <h2>{movie.title}</h2>
                 <p>{movie.overview}</p>
