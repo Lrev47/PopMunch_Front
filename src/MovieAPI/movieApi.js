@@ -26,7 +26,28 @@ export const MovieApi = createApi({
   getCollectionById: builder.query({
     query:(collectionId) => `/collection/${collectionId}`,
   }),
+  getFilteredMovies: builder.query({
+    query: ({ startDate, endDate, genres, minVoteCount, region, watchProviders }) => 
+      `/discover/movie?primary_release_date.gte=${startDate}&primary_release_date.lte=${endDate}&with_genres=${genres}&vote_count.gte=${minVoteCount}&region=${region}&with_watch_providers=${watchProviders}&watch_region=${region}&include_adult=false&include_video=false&language=en-US&page=1`,
+  }),
+  getGenres: builder.query({
+    query: () => `/genre/movie/list?language=en-US`,
+    }),
+    getRegions: builder.query({
+      query: () => `/watch/providers/regions?language=en-US`,
+    }),
+    getWatchProviders: builder.query({
+      query: () => `/watch/providers/movie?language=en-US`,
+    }),
   }),
 });
 
-export const { useGetMoviesByPopularityQuery, useGetMovieByIdQuery, useGetCollectionByIdQuery } = MovieApi;
+export const { 
+  useGetMoviesByPopularityQuery, 
+  useGetMovieByIdQuery, 
+  useGetCollectionByIdQuery,
+  useGetFilteredMoviesQuery,
+  useGetGenresQuery,
+  useGetRegionsQuery,
+  useGetWatchProvidersQuery
+} = MovieApi;

@@ -22,8 +22,27 @@ export const TVShowsApi = createApi({
     getTVShowById: builder.query({
       query: (tvShowId) => `/tv/${tvShowId}`,
     }),
+    getFilteredTVShows: builder.query({
+      query: ({ startDate, endDate, genres, minVoteCount, region, watchProviders }) => 
+        `/discover/tv?air_date.gte=${startDate}&air_date.lte=${endDate}&with_genres=${genres}&vote_count.gte=${minVoteCount}&region=${region}&with_watch_providers=${watchProviders}&watch_region=${region}&include_adult=false&language=en-US&page=1`,
+    }),
+    getGenres: builder.query({
+      query: () => `/genre/tv/list?language=en-US`,
+    }),
+    getRegions: builder.query({
+      query: () => `/watch/providers/regions?language=en-US`,
+    }),
+    getWatchProviders: builder.query({
+      query: () => `/watch/providers/tv?language=en-US`,
+    }),
   }),
 });
 
-export const { useGetTVShowsByPopularityQuery, useGetTVShowByIdQuery } =
-  TVShowsApi;
+export const { 
+  useGetTVShowsByPopularityQuery, 
+  useGetTVShowByIdQuery, 
+  useGetFilteredTVShowsQuery,
+  useGetGenresQuery,
+  useGetRegionsQuery,
+  useGetWatchProvidersQuery 
+} = TVShowsApi;

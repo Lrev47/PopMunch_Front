@@ -12,6 +12,10 @@ import SingleTvShow from "./components/SingleTvShow";
 import CollectionDetails from "./components/collections";
 import LandingPage from "./components/LandingPage";
 import MainHero from "./components/MainHero";
+import MovieSearch from "./components/MovieSearch";
+import TVShowSearch from "./components/TVShowSearch";
+
+
 
 function App() {
   return (
@@ -65,6 +69,8 @@ function App() {
               <TVHero />
               <Sidebar />
               <TVShowsList />
+              <TVShowSearch />
+
             </>
           }
         />
@@ -76,6 +82,8 @@ function App() {
               <Sidebar />
               <MovieHero />
               <PopularMovieList />
+              <MovieSearch />
+
             </>
           }
         />
