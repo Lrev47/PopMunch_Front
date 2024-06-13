@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { useGetFilteredTVShowsQuery, useGetGenresQuery, useGetRegionsQuery, useGetWatchProvidersQuery } from "../MovieAPI/TvApi";
-
+import { useGetFilteredTVShowsQuery, useGetGenresQuery } from "../MovieAPI/TvApi";
 
 const TVShowSearch = () => {
   const [searchParams, setSearchParams] = useState({
-    startDate: '',
-    endDate: '',
+    year: '',
     genres: '',
-    minVoteCount: '',
-    region: '',
-    watchProviders: '',
   });
 
   const { data: genreData, isLoading: genreLoading, error: genreError } = useGetGenresQuery();
-  const { data: regionData, isLoading: regionLoading, error: regionError } = useGetRegionsQuery();
-  const { data: providerData, isLoading: providerLoading, error: providerError } = useGetWatchProvidersQuery();
   const { data, error, isLoading, refetch } = useGetFilteredTVShowsQuery(searchParams, { skip: false });
 
   useEffect(() => {
     if (searchParams) {
       refetch();
     }
-  }, [searchParams]);
+  }, [searchParams, refetch]);
 
   const handleChange = (e) => {
     setSearchParams({
@@ -30,19 +23,24 @@ const TVShowSearch = () => {
     });
   };
 
+  const years = Array.from({ length: 2024 - 1900 + 1 }, (v, k) => 2024 - k); 
+
   return (
     <div className="tvshow-search-container">
       <h2 className="tvshow-search-header">Search TV Shows</h2>
       <form className="tvshow-search-form" onSubmit={(e) => e.preventDefault()}>
-        <div>
-          <label>Start Date:</label>
-          <input type="date" name="startDate" value={searchParams.startDate} onChange={handleChange} />
+        <div className="form-group">
+          <label>Year:</label>
+          <select name="year" value={searchParams.year} onChange={handleChange}>
+            <option value="">Select Year</option>
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
         </div>
-        <div>
-          <label>End Date:</label>
-          <input type="date" name="endDate" value={searchParams.endDate} onChange={handleChange} />
-        </div>
-        <div>
+        <div className="form-group">
           <label>Genres:</label>
           {genreLoading ? (
             <p>Loading genres...</p>
@@ -54,44 +52,6 @@ const TVShowSearch = () => {
               {genreData.genres.map((genre) => (
                 <option key={genre.id} value={genre.id}>
                   {genre.name}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
-        <div>
-          <label>Minimum Vote Count:</label>
-          <input type="number" name="minVoteCount" value={searchParams.minVoteCount} onChange={handleChange} />
-        </div>
-        <div>
-          <label>Region:</label>
-          {regionLoading ? (
-            <p>Loading regions...</p>
-          ) : regionError ? (
-            <p>Error loading regions</p>
-          ) : (
-            <select name="region" value={searchParams.region} onChange={handleChange}>
-              <option value="">Select Region</option>
-              {regionData.results.map((region) => (
-                <option key={region.iso_3166_1} value={region.iso_3166_1}>
-                  {region.english_name}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
-        <div>
-          <label>Watch Providers:</label>
-          {providerLoading ? (
-            <p>Loading watch providers...</p>
-          ) : providerError ? (
-            <p>Error loading watch providers</p>
-          ) : (
-            <select name="watchProviders" value={searchParams.watchProviders} onChange={handleChange}>
-              <option value="">Select Watch Provider</option>
-              {providerData.results.map((provider) => (
-                <option key={provider.provider_id} value={provider.provider_id}>
-                  {provider.provider_name}
                 </option>
               ))}
             </select>
