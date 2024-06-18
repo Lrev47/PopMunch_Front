@@ -1,4 +1,3 @@
-/* TopNav styles */
 .TopNav {
   width: 100%;
   height: 100px;
@@ -7,9 +6,9 @@
   align-items: center;
   padding: 0 1rem;
   box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: sticky; /* Ensure the navbar is sticky */
+  top: 0; /* Stick to the top of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
   box-shadow: var(--box-shadow);
 }
 

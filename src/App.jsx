@@ -15,18 +15,16 @@ import MainHero from "./components/MainHero";
 import MovieSearch from "./components/MovieSearch";
 import TVShowSearch from "./components/TVShowSearch";
 
-
-
 function App() {
   return (
     <>
+      <TopNav />
       <Routes>
         <Route
           path="/"
           element={
             <>
               <MainHero />
-              <TopNav />
               <Sidebar />
               <LandingPage />
             </>
@@ -36,7 +34,6 @@ function App() {
           path="/movie/:id"
           element={
             <>
-              <TopNav />
               <Sidebar />
               <SingleMovie />
             </>
@@ -46,7 +43,6 @@ function App() {
           path="/tv/:id"
           element={
             <>
-              <TopNav />
               <Sidebar />
               <SingleTvShow />
             </>
@@ -56,7 +52,6 @@ function App() {
           path="/logIn"
           element={
             <>
-              <TopNav />
               <Sidebar />
             </>
           }
@@ -65,12 +60,10 @@ function App() {
           path="/tv"
           element={
             <>
-              <TopNav />
               <TVHero />
               <Sidebar />
               <TVShowsList />
               <TVShowSearch />
-
             </>
           }
         />
@@ -78,12 +71,10 @@ function App() {
           path="/movies"
           element={
             <>
-              <TopNav />
               <Sidebar />
               <MovieHero />
               <PopularMovieList />
               <MovieSearch />
-
             </>
           }
         />
@@ -91,7 +82,6 @@ function App() {
           path="/collections/:id"
           element={
             <>
-              <TopNav />
               <Sidebar />
               <CollectionDetails />
             </>

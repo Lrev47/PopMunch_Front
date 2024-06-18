@@ -15,9 +15,9 @@ function TopNav() {
     navigate("/");
   };
 
-  const logInPageOnClick = () => {
-    navigate("/logIn");
-  };
+  // const logInPageOnClick = () => {
+  //   navigate("/logIn");
+  // };
 
   return (
     <div className="TopNav">
@@ -32,9 +32,7 @@ function TopNav() {
         <div className="lines"></div>
         <div className="lines"></div>
       </div>
-      {/* <button className="LogInButton" onClick={logInPageOnClick}>
-        Log In
-      </button> */}
+      {/* <button className="LogInButton">Log In</button> */}
     </div>
   );
 }

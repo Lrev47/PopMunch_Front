@@ -1,14 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useGetFilteredTVShowsQuery, useGetGenresQuery } from "../MovieAPI/TvApi";
+import React, { useState, useEffect } from "react";
+import {
+  useGetFilteredTVShowsQuery,
+  useGetGenresQuery,
+} from "../MovieAPI/TvApi";
+import { useNavigate } from "react-router-dom";
 
 const TVShowSearch = () => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useState({
-    year: '',
-    genres: '',
+    year: "",
+    genres: "",
   });
 
-  const { data: genreData, isLoading: genreLoading, error: genreError } = useGetGenresQuery();
-  const { data, error, isLoading, refetch } = useGetFilteredTVShowsQuery(searchParams, { skip: false });
+  const {
+    data: genreData,
+    isLoading: genreLoading,
+    error: genreError,
+  } = useGetGenresQuery();
+  const { data, error, isLoading, refetch } = useGetFilteredTVShowsQuery(
+    searchParams,
+    { skip: false }
+  );
 
   useEffect(() => {
     if (searchParams) {
@@ -23,7 +35,11 @@ const TVShowSearch = () => {
     });
   };
 
-  const years = Array.from({ length: 2024 - 1900 + 1 }, (v, k) => 2024 - k); 
+  const handleClick = (id) => {
+    navigate(`/tv/${id}`);
+  };
+
+  const years = Array.from({ length: 2024 - 1900 + 1 }, (v, k) => 2024 - k);
 
   return (
     <div className="tvshow-search-container">
@@ -47,7 +63,11 @@ const TVShowSearch = () => {
           ) : genreError ? (
             <p>Error loading genres</p>
           ) : (
-            <select name="genres" value={searchParams.genres} onChange={handleChange}>
+            <select
+              name="genres"
+              value={searchParams.genres}
+              onChange={handleChange}
+            >
               <option value="">Select Genre</option>
               {genreData.genres.map((genre) => (
                 <option key={genre.id} value={genre.id}>
@@ -65,8 +85,15 @@ const TVShowSearch = () => {
         <div className="tvshow-list-container">
           <ul className="tvshow-list">
             {data.results.map((tvshow) => (
-              <li key={tvshow.id} className="tvshow-item">
-                <img src={`https://image.tmdb.org/t/p/w500${tvshow.poster_path}`} alt={tvshow.name} />
+              <li
+                key={tvshow.id}
+                className="tvshow-item"
+                onClick={() => handleClick(tvshow.id)}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${tvshow.poster_path}`}
+                  alt={tvshow.name}
+                />
                 <h2>{tvshow.name}</h2>
                 <p>{tvshow.overview}</p>
               </li>
