@@ -28,10 +28,12 @@ const LandingPage = () => {
 
   const handleMovieClick = (id) => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   const handleTVClick = (id) => {
     navigate(`/tv/${id}`);
+    window.scrollTo(0, 0);
   };
 
   const movies = movieData?.results.slice(0, 10) || [];

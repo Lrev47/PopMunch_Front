@@ -8,6 +8,7 @@ const TVShowsList = () => {
 
   const handleClick = (id) => {
     navigate(`/tv/${id}`);
+    window.scrollTo(0, 0);
   };
 
   if (isLoading) {

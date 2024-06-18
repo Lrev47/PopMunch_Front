@@ -13,6 +13,7 @@ function SingleMovie() {
 
   const CollectionsHandelClick = (id) => {
     navigate(`/collections/${id}`);
+    window.scrollTo(0, 0);
   };
 
   console.log("SINGLE MOVIE DATA:", movie);

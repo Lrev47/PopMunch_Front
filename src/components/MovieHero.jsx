@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetMoviesByPopularityQuery } from "../MovieAPI";
 
-
 const MovieHero = () => {
   const navigate = useNavigate();
   const { data, error, isLoading } = useGetMoviesByPopularityQuery();
@@ -23,6 +22,7 @@ const MovieHero = () => {
 
   const handleClick = (id) => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   return (

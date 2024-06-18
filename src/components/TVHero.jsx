@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useGetTVShowsByPopularityQuery } from "../MovieAPI/TvApi";
 
-
 const TVHero = () => {
   const navigate = useNavigate();
   const { data, error, isLoading } = useGetTVShowsByPopularityQuery();
@@ -23,6 +22,7 @@ const TVHero = () => {
 
   const handleClick = (id) => {
     navigate(`/tv/${id}`);
+    window.scrollTo(0, 0);
   };
 
   return (

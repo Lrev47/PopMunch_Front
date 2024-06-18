@@ -11,6 +11,7 @@ function SideBar() {
   const handleNavigation = (path) => {
     navigate(path);
     dispatch(toggleSidebar());
+    window.scrollTo(0, 0);
   };
 
   return (

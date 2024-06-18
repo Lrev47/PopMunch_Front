@@ -36,6 +36,7 @@ const MovieSearch = () => {
 
   const handleClick = (id) => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   const years = Array.from({ length: 2024 - 1900 + 1 }, (v, k) => 2024 - k);

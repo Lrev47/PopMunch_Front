@@ -22,6 +22,7 @@ const MainHero = () => {
 
   const handleClick = (id) => {
     navigate(`/movie/${id}`);
+    window.scrollTo(0, 0);
   };
 
   const scrollToContent = () => {
