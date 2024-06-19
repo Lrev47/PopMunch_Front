@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toggleSidebar } from "../StateManagment/websiteSlice";
@@ -6,6 +6,25 @@ import { toggleSidebar } from "../StateManagment/websiteSlice";
 function TopNav() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navRef.current) {
+        if (window.scrollY > navRef.current.offsetTop) {
+          navRef.current.classList.add("sticky");
+        } else {
+          navRef.current.classList.remove("sticky");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handelToggleSideBar = () => {
     dispatch(toggleSidebar());
@@ -16,12 +35,8 @@ function TopNav() {
     window.scrollTo(0, 0);
   };
 
-  // const logInPageOnClick = () => {
-  //   navigate("/logIn");
-  // };
-
   return (
-    <div className="TopNav">
+    <div ref={navRef} className="TopNav">
       <img
         onClick={returnHomeOnClick}
         className="WebsiteLogo"
@@ -33,7 +48,6 @@ function TopNav() {
         <div className="lines"></div>
         <div className="lines"></div>
       </div>
-      {/* <button className="LogInButton">Log In</button> */}
     </div>
   );
 }
