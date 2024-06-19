@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar } from "../StateManagment/websiteSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function SideBar() {
   const isSidebarOpen = useSelector((state) => state.ui.sidebarOpen);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   const handleNavigation = (path) => {
-    navigate(path);
     dispatch(toggleSidebar());
-    window.scrollTo(0, 0);
+    navigate(path);
   };
 
   return (
