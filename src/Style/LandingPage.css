@@ -1,7 +1,7 @@
 /* LandingPage.css */
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #ecf0f1;
+  --primary-color: #363636;
+  --secondary-color: #ffffff;
   --accent-color: #e74c3c;
   --font-family: "Roboto", sans-serif;
   --transition-speed: 0.3s;
@@ -14,47 +14,14 @@ body {
   background-color: var(--secondary-color);
 }
 
-.header {
+.landing-header {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var (--secondary-color);
   padding: 1em;
   box-shadow: var(--box-shadow);
   position: sticky;
   top: 0;
   z-index: 1000;
-}
-
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nav-bar h1 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.nav-bar ul {
-  list-style-type: none;
-  display: flex;
-  gap: 1em;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar li {
-  cursor: pointer;
-  padding: 0.5em 1em;
-  background-color: var(--accent-color);
-  border-radius: 5px;
-  transition: background-color var(--transition-speed);
-}
-
-.nav-bar li:hover {
-  background-color: darken(var(--accent-color), 10%);
 }
 
 .main-content {
