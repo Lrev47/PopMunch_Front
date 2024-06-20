@@ -14,8 +14,12 @@ import LandingPage from "./components/LandingPage";
 import MainHero from "./components/MainHero";
 import MovieSearch from "./components/MovieSearch";
 import TVShowSearch from "./components/TVShowSearch";
+import useScrollToTop from "./Utility/ScrollToTop";
 
 function App() {
+  
+  useScrollToTop();
+
   return (
     <>
       <Routes>

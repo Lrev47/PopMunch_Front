@@ -18,7 +18,6 @@ const PopularMovieList = () => {
 
   const handleClick = (id) => {
     navigate(`/movie/${id}`);
-    window.scrollTo(0, 0);
   };
 
   const movies = data.results.slice(1);

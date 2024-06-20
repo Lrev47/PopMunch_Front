@@ -11,7 +11,7 @@
 /* Global styles */
 html,
 body {
-  overflow-x: hidden;
+  overflow: auto;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -35,4 +35,10 @@ a {
 
 a:hover {
   color: darken(var(--accent-color), 10%);
+}
+
+/* Hide the scroll bar for WebKit browsers */
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }

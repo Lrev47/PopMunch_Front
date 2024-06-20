@@ -12,7 +12,6 @@ const CollectionDetails = () => {
 
   const handleClick = (id) => {
     navigate(`/movie/${id}`);
-    window.scrollTo(0, 0);
   };
 
   console.log(collection);
