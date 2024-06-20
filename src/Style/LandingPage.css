@@ -1,4 +1,3 @@
-/* LandingPage.css */
 :root {
   --primary-color: #363636;
   --secondary-color: #ffffff;
@@ -15,8 +14,8 @@ body {
 }
 
 #landing-page-content {
-  padding-top: 50px; /* Adjust this value as needed */
-  margin-top: -50px; /* Negative margin to offset the padding */
+  padding-top: 50px; 
+  margin-top: -50px; 
 }
 
 

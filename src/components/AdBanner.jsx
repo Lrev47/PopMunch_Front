@@ -1,4 +1,4 @@
-// BannerAd.js
+
 import React from "react";
 
 const BannerAd = ({ imageUrl, altText, linkUrl, adText }) => {

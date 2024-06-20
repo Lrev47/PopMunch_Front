@@ -1,4 +1,4 @@
-// AttributionBanner.js
+
 import React from 'react';
 import './BannerAd.css';
 

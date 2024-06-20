@@ -8,7 +8,7 @@
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Global styles */
+
 html,
 body {
   overflow: auto;
@@ -37,7 +37,7 @@ a:hover {
   color: darken(var(--accent-color), 10%);
 }
 
-/* Hide the scroll bar for WebKit browsers */
+
 body::-webkit-scrollbar {
   width: 0;
   background: transparent;

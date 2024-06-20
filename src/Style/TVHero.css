@@ -29,14 +29,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.7); /* White overlay for better contrast */
+    background: rgba(255, 255, 255, 0.7); 
     z-index: 0;
   }
   
   .tv-hero-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center; 
     position: relative;
     z-index: 1;
     width: 100%;
@@ -48,10 +48,10 @@
   }
   
   .tv-hero-poster img {
-    width: 300px; /* Increased poster size */
+    width: 300px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-right: 20px; /* Reduced gap */
+    margin-right: 20px; 
   }
   
   .tv-hero-details {
