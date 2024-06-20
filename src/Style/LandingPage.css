@@ -14,6 +14,12 @@ body {
   background-color: var(--secondary-color);
 }
 
+#landing-page-content {
+  padding-top: 50px; /* Adjust this value as needed */
+  margin-top: -50px; /* Negative margin to offset the padding */
+}
+
+
 .landing-header {
   background-color: var(--primary-color);
   color: var (--secondary-color);
