@@ -13,7 +13,7 @@ const MovieHero = () => {
   if (error) {
     return <div>{error.message}</div>;
   }
-
+  
   const movie = data?.results[0];
 
   if (!movie) {
