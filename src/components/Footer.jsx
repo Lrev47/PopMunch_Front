@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   const scrollToTop = () => {
     console.log("Scroll to top triggered");
-    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+    indow.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
