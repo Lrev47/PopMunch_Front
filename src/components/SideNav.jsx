@@ -1,38 +1,57 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { toggleSidebar } from "../StateManagment/websiteSlice";
-import { useNavigate, useLocation } from "react-router-dom";
 
-function SideBar() {
-  const isSidebarOpen = useSelector((state) => state.ui.sidebarOpen);
+function Sidebar() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const { sidebarOpen } = useSelector((state) => state.ui);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [location.pathname]);
-
-  const handleNavigation = (path) => {
+  const closeSidebar = () => {
     dispatch(toggleSidebar());
-    navigate(path);
   };
 
   return (
-    <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-      <button
-        className="close-button"
-        onClick={() => dispatch(toggleSidebar())}
-      >
-        &#x2715;
-      </button>
-      <h1>Navigation Menu</h1>
-      <ul className="sidebar-links">
-        <li onClick={() => handleNavigation("/movies")}>Movie Section</li>
-        <li onClick={() => handleNavigation("/tv")}>TV Section</li>
-      </ul>
+    <div className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+      <div className="sidebar-header">
+        <h2 className="sidebar-title">PopMunch</h2>
+        <button className="close-button" onClick={closeSidebar}>
+          ✕
+        </button>
+      </div>
+
+      <nav className="sidebar-nav">
+        <Link to="/" className="nav-item" onClick={closeSidebar}>
+          <span className="nav-item-icon">🏠</span>
+          Home
+        </Link>
+        <Link to="/movies" className="nav-item" onClick={closeSidebar}>
+          <span className="nav-item-icon">🎬</span>
+          Movies
+        </Link>
+        <Link to="/tv" className="nav-item" onClick={closeSidebar}>
+          <span className="nav-item-icon">📺</span>
+          TV Shows
+        </Link>
+        <Link to="/logIn" className="nav-item" onClick={closeSidebar}>
+          <span className="nav-item-icon">👤</span>
+          Profile
+        </Link>
+      </nav>
+      
+      <div className="sidebar-section">
+        <h3 style={{marginBottom: '1rem', color: 'var(--secondary-color)'}}>Categories</h3>
+        <Link to="/movies?genre=action" className="nav-item" onClick={closeSidebar}>Action</Link>
+        <Link to="/movies?genre=comedy" className="nav-item" onClick={closeSidebar}>Comedy</Link>
+        <Link to="/movies?genre=drama" className="nav-item" onClick={closeSidebar}>Drama</Link>
+        <Link to="/movies?genre=horror" className="nav-item" onClick={closeSidebar}>Horror</Link>
+      </div>
+
+      <div className="sidebar-section">
+        <button className="sidebar-button">Sign In</button>
+      </div>
     </div>
   );
 }
 
-export default SideBar;
+export default Sidebar;

@@ -1,57 +1,99 @@
 .TopNav {
   width: 100%;
-  height: 100px;
-  background-color: rgb(49, 49, 49);
+  height: 80px;
+  background-color: rgba(15, 15, 26, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 2rem;
   box-sizing: border-box;
-  position: -webkit-sticky; 
-  position: sticky; 
+  position: sticky;
   top: 0;
   z-index: 10000;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .TopNav.sticky {
-  position: fixed; 
-  top: 0;
-  width: 100%;
-  z-index: 10000;
+  height: 70px;
+  background-color: rgba(15, 15, 26, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .WebsiteLogo {
-  flex: 0 1 auto;
-  margin-left: 1rem;
-  width: 150px;
-  height: 150px;
-  transition: transform var(--transition-speed);
+  flex: 0 0 auto;
+  margin-right: 1.5rem;
+  width: auto;
+  height: 50px;
+  transition: transform 0.3s ease;
 }
 
 .WebsiteLogo:hover {
   cursor: pointer;
   transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(255, 44, 85, 0.4));
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto 0 2rem;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .searchBar {
   flex: 1;
-  margin-left: 1rem;
-  height: 30px;
-  border-radius: 100px;
-  font-size: 17px;
-  padding: 0.5rem 1rem;
+  max-width: 400px;
+  height: 40px;
+  border-radius: var(--border-radius-xl);
+  font-size: 0.95rem;
+  padding: 0 1.25rem;
   border: none;
-  background-color: var(--secondary-color);
-  color: var(--primary-bg-color);
-  box-shadow: var(--box-shadow);
-  transition: background-color var(--transition-speed),
-    box-shadow var(--transition-speed);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.searchBar::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .searchBar:focus {
   outline: none;
-  background-color: lighten(var(--secondary-color), 10%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(255, 44, 85, 0.2);
 }
 
 .HamburgerMenu {
@@ -59,18 +101,26 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 70px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 1.5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.HamburgerMenu:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .lines {
   width: 100%;
-  height: 7px;
-  background-color: #535353;
-  border-radius: 100px;
-  transition: background-color var(--transition-speed);
+  height: 2px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .HamburgerMenu:hover .lines {
@@ -78,21 +128,52 @@
 }
 
 .LogInButton {
-  flex: 0 1 auto;
-  margin-left: 1rem;
+  flex: 0 0 auto;
+  margin-left: 1.5rem;
   height: 40px;
-  width: 100px;
-  font-size: 17px;
+  padding: 0 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   background-color: var(--accent-color);
   border: none;
-  border-radius: 20px;
+  border-radius: var(--border-radius-xl);
   color: var(--primary-color);
   cursor: pointer;
-  transition: background-color var(--transition-speed),
-    box-shadow var(--transition-speed);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(255, 44, 85, 0.25);
+  transition: all 0.3s ease;
 }
 
 .LogInButton:hover {
-  background-color: darken(var(--accent-color), 10%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-color-hover);
+  box-shadow: 0 6px 20px rgba(255, 44, 85, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .TopNav {
+    padding: 0 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .searchBar {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .WebsiteLogo {
+    height: 40px;
+  }
+  
+  .LogInButton {
+    height: 36px;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+  }
 }

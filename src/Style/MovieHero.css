@@ -1,88 +1,208 @@
 .movie-hero-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 95vh;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    /* padding: 20px; */
-  }
-  
-  .movie-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 80%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .movie-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.5); 
-    z-index: 0;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.movie-hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 15%;
+  overflow: hidden;
+}
+
+.movie-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    var(--primary-bg-color) 0%,
+    rgba(15, 15, 26, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.movie-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.movie-hero-poster {
+  flex-shrink: 0;
+  margin-right: 3rem;
+  transform: translateY(2rem);
+  transition: transform 0.5s ease;
+}
+
+.movie-hero-poster img {
+  width: 300px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-hero-poster:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.movie-hero-details {
+  color: var(--primary-color);
+  max-width: 700px;
+  padding-bottom: 2rem;
+}
+
+.movie-hero-details h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
+  line-height: 1.1;
+}
+
+.movie-hero-details .tagline {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-shadow: var(--text-shadow);
+}
+
+.movie-hero-details p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.movie-hero-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.movie-hero-meta-item {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.movie-hero-meta-item svg {
+  margin-right: 0.5rem;
+  color: var(--accent-color);
+}
+
+.movie-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.movie-hero-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.movie-hero-button.primary {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 44, 85, 0.3);
+}
+
+.movie-hero-button.primary:hover {
+  background-color: var(--accent-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 44, 85, 0.4);
+}
+
+.movie-hero-button.secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: var(--primary-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.movie-hero-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.movie-hero-button svg {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1024px) {
   .movie-hero-content {
-    display: flex;
+    padding: 2rem;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding: 20px;
+    text-align: center;
   }
   
   .movie-hero-poster {
-    flex-shrink: 0;
-  }
-  
-  .movie-hero-poster img {
-    width: 300px; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-right: 20px; 
+    margin-right: 0;
+    margin-bottom: 2rem;
+    transform: translateY(0);
   }
   
   .movie-hero-details {
-    color: black;
-    max-width: 600px;
+    padding-bottom: 0;
+  }
+  
+  .movie-hero-meta {
+    justify-content: center;
+  }
+  
+  .movie-hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-hero-container {
+    height: auto;
+  }
+  
+  .movie-hero {
+    height: 60vh;
   }
   
   .movie-hero-details h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #000000;
+    font-size: 2.5rem;
   }
   
-  .movie-hero-details p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #000000;
+  .movie-hero-poster img {
+    width: 200px;
   }
-  
-  .movie-hero-details button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff6347;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .movie-hero-details button:hover {
-    background-color: #ff4500;
-  }
+}
   

@@ -1,53 +1,81 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
-  const scrollToTop = () => {
-    console.log("Scroll to top triggered");
-    indow.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="footer">
-      <div className="return-home" onClick={scrollToTop}>
-        <svg
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="#fafafa"
-            d="M17.707 10.293l-5-5c-0.391-0.391-1.024-0.391-1.414 0l-5 5c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l4.293-4.293 4.293 4.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414zM17.707 17.293l-5-5c-0.391-0.391-1.024-0.391-1.414 0l-5 5c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l4.293-4.293 4.293 4.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414z"
-          ></path>
-        </svg>
-      </div>
-      <div className="socials">
-        <a
-          href="https://github.com/Lrev47"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="socials__github">
+      <div className="footer-container">
+        <div className="footer-section">
+          <Link to="/" className="footer-logo">
             <img
-              src="https://imagizer.imageshack.com/img922/6963/LvHgpL.png"
-              alt="GitHub"
+              src="https://imagizer.imageshack.com/img922/3152/npjpsD.png"
+              alt="PopMunch Logo"
             />
+          </Link>
+          <p className="footer-description">
+            Your ultimate destination for movie and TV show reviews. Discover new films, 
+            share your thoughts, and connect with fellow cinephiles.
+          </p>
+          <div className="social-links">
+            <a href="#" className="social-link">
+              <span>𝕏</span>
+            </a>
+            <a href="#" className="social-link">
+              <span>ƒ</span>
+            </a>
+            <a href="#" className="social-link">
+              <span>𝓲</span>
+            </a>
+            <a href="#" className="social-link">
+              <span>▶</span>
+            </a>
           </div>
-        </a>
-        <a
-          href="mailto:luis.revilla47@yahoo.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="socials__email">
-            <img
-              src="https://imagizer.imageshack.com/img923/3862/sGXlku.png"
-              alt="Email"
-            />
+        </div>
+
+        <div className="footer-section">
+          <h3 className="footer-title">Explore</h3>
+          <div className="footer-links">
+            <Link to="/" className="footer-link">Home</Link>
+            <Link to="/movies" className="footer-link">Movies</Link>
+            <Link to="/tv" className="footer-link">TV Shows</Link>
+            <Link to="/collections/1" className="footer-link">Collections</Link>
           </div>
-        </a>
+        </div>
+
+        <div className="footer-section">
+          <h3 className="footer-title">Categories</h3>
+          <div className="footer-links">
+            <Link to="/movies?genre=action" className="footer-link">Action</Link>
+            <Link to="/movies?genre=comedy" className="footer-link">Comedy</Link>
+            <Link to="/movies?genre=drama" className="footer-link">Drama</Link>
+            <Link to="/movies?genre=horror" className="footer-link">Horror</Link>
+            <Link to="/movies?genre=scifi" className="footer-link">Sci-Fi</Link>
+          </div>
+        </div>
+
+        <div className="footer-section">
+          <h3 className="footer-title">Newsletter</h3>
+          <p className="footer-description">
+            Subscribe to our newsletter for the latest movie news, reviews, and recommendations.
+          </p>
+          <div className="footer-newsletter">
+            <form className="newsletter-form">
+              <input 
+                type="email" 
+                className="newsletter-input" 
+                placeholder="Your email address" 
+              />
+              <button type="submit" className="newsletter-button">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      <p className="copyright">LUIS REVILLA ©2024</p>
+
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} PopMunch. All rights reserved.</p>
+      </div>
     </footer>
   );
 }

@@ -1,87 +1,169 @@
 .footer {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-color);
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
   position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.footer-logo {
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 160px;
-  background-color: rgb(26, 26, 26);
-  margin-top: 5rem;
+}
+
+.footer-title {
   color: var(--primary-color);
-  box-shadow: var(--box-shadow);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
 }
 
-.socials {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.socials__github,
-.socials__email {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 35px;
-  width: 35px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: transform var(--transition-speed);
-}
-
-.socials__github:hover,
-.socials__email:hover {
-  transform: scale(1.2);
-}
-
-.socials__github {
-  margin-right: 1rem;
-}
-
-.socials__email {
-  margin-left: 1rem;
-}
-
-.socials img {
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: var(--box-shadow);
-}
-
-.copyright {
-  color: var(--primary-color);
-  font-size: 10px;
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-.return-home {
+.footer-title::after {
+  content: '';
   position: absolute;
-  top: -25px;
-  width: 40px;
-  height: 45px;
-  margin-right: auto;
-  margin-left: auto;
+  bottom: -8px;
   left: 0;
-  right: 0;
-  text-align: center;
+  width: 40px;
+  height: 2px;
   background-color: var(--accent-color);
-  animation-duration: 1s;
-  animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  border-radius: 40%;
-  box-shadow: var(--box-shadow);
 }
 
-.return-home:hover {
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.footer-link:hover {
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+.footer-description {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.footer-newsletter {
+  margin-top: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-input {
+  padding: 0.8rem 1rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.newsletter-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  animation-name: bounce;
+  transition: all 0.3s ease;
 }
 
-.return-home svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--primary-color);
-  pointer-events: none;
+.newsletter-button:hover {
+  background-color: var(--accent-color-hover);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .footer-container {
+    gap: 2rem;
+  }
 }
