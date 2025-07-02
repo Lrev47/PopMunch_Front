@@ -188,8 +188,7 @@ function Footer() {
             />
           </FooterLogo>
           <FooterDescription>
-            Your ultimate destination for movie and TV show reviews. Discover new films, 
-            share your thoughts, and connect with fellow cinephiles.
+            Your ultimate destination for movie and TV show reviews. Discover new films and TV shows!
           </FooterDescription>
           <SocialLinks>
             <SocialLink 
